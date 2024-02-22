@@ -8,9 +8,15 @@ router.get('/', (req,res,next)=>{
     })
 })
 
+
 router.post('/', (req,res,next)=>{
+    const products = {
+        name: req.body.name,
+        price: req.body.price
+    }
     res.status(200).json({
-        message: "handling post request /products"
+        message: "handling post request /products",
+        createdProduct: products
     })
 })
 
